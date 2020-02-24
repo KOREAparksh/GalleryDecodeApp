@@ -10,18 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:id="@+id/textview"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:autoSizeTextType="none"
         android:autoSizePresetSizes="@array/autosize_text_sizes"
-        android:breakStrategy="high_quality"
-        android:hyphenationFrequency="full"
-        android:ellipsize="start"
+        android:maxLines="1"
+        android:text="www.naver.com"
         android:autoLink="all"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:text="앨범에서\n가져오기"
+        android:gravity="center"
+        android:background="@drawable/view_shape_main"
         android:id="@+id/button"/>
 
 </RelativeLayout>

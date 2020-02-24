@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="autosize_text_sizes">
-        <item>15dp</item>
         <item>20dp</item>
         <item>25dp</item>
         <item>30dp</item>
@@ -19,5 +18,10 @@
         <item>90dp</item>
         <item>95dp</item>
         <item>100dp</item>
+        <item>110dp</item>
+        <item>120dp</item>
+        <item>130dp</item>
+        <item>140dp</item>
+        <item>150dp</item>
     </array>
 </resources>
