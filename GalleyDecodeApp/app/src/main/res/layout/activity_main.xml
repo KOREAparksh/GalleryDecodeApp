@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,23 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/textview"
+        android:gravity="center_horizontal"
+        android:autoSizeTextType="none"
+        android:autoSizePresetSizes="@array/autosize_text_sizes"
+        android:maxLines="1"
+        android:text="www.naver.com"
+        android:autoLink="all"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@android:color/white"
+        android:text="앨범에서\n가져오기"
+        android:gravity="center"
+        android:background="@drawable/view_shape_main"
+        android:id="@+id/button"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
