@@ -3,6 +3,7 @@
     <color name="colorPrimary">@android:color/white</color>
     <color name="colorPrimaryDark">@android:color/white</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">@android:color/black</color>
     <color name="colorMainButtonPressFalse" >#4c5566</color>
     <color name="colorMainButtonPressTrue" >#3C4351</color>
 </resources>

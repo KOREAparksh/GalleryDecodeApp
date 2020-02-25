@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/white">
 
     <TextView
         android:layout_width="match_parent"
@@ -14,7 +15,6 @@
         android:autoSizeTextType="none"
         android:autoSizePresetSizes="@array/autosize_text_sizes"
         android:maxLines="1"
-        android:text="www.naver.com"
         android:autoLink="all"/>
 
     <Button
