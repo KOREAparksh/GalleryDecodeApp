@@ -14,7 +14,7 @@
         android:gravity="center_horizontal"
         android:autoSizeTextType="none"
         android:autoSizePresetSizes="@array/autosize_text_sizes"
-        android:text="인식할 이미지를 앨범에서 가져오세요."
+        android:text="@string/textview_main_text"
         android:textColor="@android:color/white"
         android:maxLines="1"
         android:autoLink="all"/>
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:text="앨범에서\n가져오기"
+        android:text="@string/button_import_gallery"
         android:textSize="40dp"
         android:gravity="center"
         android:background="@drawable/view_shape_main"

@@ -47,7 +47,7 @@ public class DecodeGalleryActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"취소",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.cancel,Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -90,7 +90,7 @@ public class DecodeGalleryActivity extends AppCompatActivity {
 
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "사진 선택 취소", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.deselect_photo, Toast.LENGTH_LONG).show();
                 finish();
             }
         }
@@ -111,7 +111,7 @@ public class DecodeGalleryActivity extends AppCompatActivity {
         try {
             Result result1 = reader.decode(binaryBitmap);
             resultString = result1.toString();
-            Toast.makeText(getApplicationContext(),"바코드 식별 완료 : "+resultString,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),getString(R.string.decode_complete)+" : "+resultString,Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(DecodeGalleryActivity.this, MainActivity.class);
             intent.putExtra(MainActivity.INTENT_CODE_STRING, result1.getText());
@@ -121,7 +121,7 @@ public class DecodeGalleryActivity extends AppCompatActivity {
             return true;
         } catch (Exception e) {
             resultString = "ERROR";
-            Toast.makeText(getApplicationContext(),"코드 식별 불가 : "+resultString,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.decode_failed+" : "+resultString,Toast.LENGTH_SHORT).show();
             return false;
         }
 

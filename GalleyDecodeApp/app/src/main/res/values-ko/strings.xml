@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">GalleyDecodeApp</string>
+    <string name="cancel">취소</string>
+    <string name="deselect_photo">사진 선택 취소</string>
+    <string name="decode_complete">코드 식별 완료</string>
+    <string name="decode_failed">코드 식별 불가</string>
+    <string name="button_string_back">뒤로가기</string>
+    <string name="button_string_decode">인식</string>
+    <string name="button_import_gallery">앨범에서\n가져오기</string>
+    <string name="textview_one">ㆍ네모박스를 인식할 코드에 맞추어주세요.</string>
+    <string name="textview_two">ㆍ인식이 되지 않으면 크기와 위치를 조금씩 바꾸며 인식해주세요.</string>
+    <string name="textview_three">ㆍ화질이 좋지 않을 경우 인식이 되지 않을 수 있습니다.</string>
+    <string name="textview_main_text">인식할 이미지를 앨범에서 가져오세요.</string>
 </resources>

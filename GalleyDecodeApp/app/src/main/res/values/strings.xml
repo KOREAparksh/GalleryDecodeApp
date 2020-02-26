@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">GalleyDecodeApp</string>
+    <string name="cancel">Canceled</string>
+    <string name="deselect_photo">Deselect photo</string>
+    <string name="decode_complete">Decode Complete</string>
+    <string name="decode_failed">Decode Failed</string>
+    <string name="button_string_back">back</string>
+    <string name="button_string_decode">decode</string>
+    <string name="button_import_gallery">Get the code image to decode from the gallery.</string>
+    <string name="textview_one">ㆍ Adjust the white box to the size of the code to be decoded.</string>
+    <string name="textview_two">ㆍ If not decoded, change the size and position little by little.</string>
+    <string name="textview_three">ㆍ If the image quality is bad, it may not be decoded.</string>
+    <string name="textview_main_text">Get the code image to decode from the album.</string>
+
 </resources>
