@@ -121,7 +121,7 @@ public class DecodeGalleryActivity extends AppCompatActivity {
             return true;
         } catch (Exception e) {
             resultString = "ERROR";
-            Toast.makeText(getApplicationContext(),R.string.decode_failed+" : "+resultString,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),getString(R.string.decode_failed)+" : "+resultString,Toast.LENGTH_SHORT).show();
             return false;
         }
 
