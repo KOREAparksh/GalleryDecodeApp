@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     Button button;
     private AdView mAdView;
-    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView=(TextView)findViewById(R.id.textview);
         button = (Button)findViewById(R.id.button);
-        //mAdView = (AdView)findViewById(R.id.adView);
-        relativeLayout = (RelativeLayout)findViewById(R.id.mainRelativeLayout);
+        mAdView = (AdView)findViewById(R.id.adView);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -64,19 +62,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //mAdView.setAdSize(new AdSize());
-        //AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().build();
 
-        //AdSize adSize = getAdSize();
-        /*mAdView.setAdSize(adSize);
-        mAdView.loadAd(adRequest);*/
-        mAdView = new AdView(this);
-        mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-        RelativeLayout.LayoutParams rp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        rp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        mAdView.setLayoutParams(rp);
-        relativeLayout.addView(mAdView);
-        loadBanner();
+        mAdView.loadAd(adRequest);
 
         setSize();
 
@@ -89,38 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
-    }
-
-    private void loadBanner() {
-        // Create an ad request. Check your logcat output for the hashed device ID
-        // to get test ads on a physical device, e.g.,
-        // "Use AdRequest.Builder.addTestDevice("ABCDE0123") to get test ads on this
-        // device."
-        AdRequest adRequest =
-                new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                        .build();
-
-        AdSize adSize = getAdSize();
-        // Step 4 - Set the adaptive ad size on the ad view.
-        mAdView.setAdSize(adSize);
-
-        // Step 5 - Start loading the ad in the background.
-        mAdView.loadAd(adRequest);
-    }
-
-    private AdSize getAdSize() {
-        // Step 2 - Determine the screen width (less decorations) to use for the ad width.
-        Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        display.getMetrics(outMetrics);
-
-        float widthPixels = outMetrics.widthPixels;
-        float density = outMetrics.density;
-
-        int adWidth = (int) (widthPixels / density);
-
-        // Step 3 - Get adaptive ad size and return for setting on the ad view.
-        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth);
     }
 
     @Override
