@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../GalleyDecodeApp.iml" filepath="$PROJECT_DIR$/../GalleyDecodeApp.iml" group="GalleyDecodeApp" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="GalleyDecodeApp/app" />
+    </modules>
+  </component>
+</project>
