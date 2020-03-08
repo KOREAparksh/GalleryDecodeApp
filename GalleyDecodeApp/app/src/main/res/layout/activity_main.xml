@@ -27,6 +27,7 @@
         android:textSize="40dp"
         android:gravity="center"
         android:background="@drawable/view_shape_main"
+        android:layout_alignParentBottom="true"
         android:id="@+id/button"/>
 
     <com.google.android.gms.ads.AdView
