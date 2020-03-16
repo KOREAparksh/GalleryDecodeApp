@@ -30,6 +30,10 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
 import java.io.InputStream;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class DecodeGalleryActivity extends AppCompatActivity {
 
@@ -118,8 +122,20 @@ public class DecodeGalleryActivity extends AppCompatActivity {
             resultString = result1.toString();
             Toast.makeText(getApplicationContext(), getString(R.string.decode_complete) + " : " + resultString, Toast.LENGTH_SHORT).show();
 
+            SimpleDateFormat sdf = new SimpleDateFormat( "yy-MM-dd HH:mm:ss" , Locale.KOREA );
+            String timeString = sdf.format(new Date(result1.getTimestamp()));
+            Log.d("decode","코드 : "+result1.getText());
+            Log.d("decode","코드포맷 : "+result1.getBarcodeFormat());
+            Log.d("decode","타임스탬프 : "+timeString);
+
+
             Intent intent = new Intent(DecodeGalleryActivity.this, MainActivity.class);
             intent.putExtra(MainActivity.INTENT_CODE_STRING, result1.getText());
+            intent.putExtra(MainActivity.INTENT_CODE_FORMAT, result1.getBarcodeFormat().toString());
+            intent.putExtra(MainActivity.INTENT_CODE_TIMESTAMP, timeString);
+
+
+
 
             setResult(Activity.RESULT_OK, intent);
             finish();

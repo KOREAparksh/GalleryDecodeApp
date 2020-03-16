@@ -1,23 +1,18 @@
 package com.f10company.galleydecodeapp;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Display;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -40,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
     // 이 상수는 버튼이 화면 높이의 비율을 나타냄. (337(디자이너 그림 상 버튼밑마진)/1920(디자이너의그림 화면픽셀1920))
 
     protected final static String INTENT_CODE_STRING = "codeString";
+    protected final static String INTENT_CODE_FORMAT = "codeFormat";
+    protected final static String INTENT_CODE_TIMESTAMP = "codeTimestamp";
     //intent 코드 주고받는 key
 
     TextView textView;
-    Button button;
-    private AdView mAdView;
+    ImageButton button;
+    SQLiteDatabase sqLiteDatabase =null;
+    static private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView=(TextView)findViewById(R.id.textview);
-        button = (Button)findViewById(R.id.button);
+        button = (ImageButton)findViewById(R.id.button);
         mAdView = (AdView)findViewById(R.id.adView);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -65,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
 
         mAdView.loadAd(adRequest);
-
-        setSize();
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == Activity.RESULT_OK)
             {
                 String str = data.getExtras().getString(INTENT_CODE_STRING);
+
                 textView.setText(str);
             }
         }
@@ -119,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
         rp_textLayout.addRule( RelativeLayout.CENTER_HORIZONTAL );
         textView.setLayoutParams(rp_textLayout);
         //////////////////////////////////////////////////////////////////////////////////
-
 
     }
 }
